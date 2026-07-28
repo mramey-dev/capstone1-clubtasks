@@ -1,0 +1,52 @@
+Table Cities {
+  id int pk
+  name varchar
+  state varchar
+}
+
+Table Facilities {
+  id int pk
+  name varchar
+  shortName varchar
+  cityId int
+}
+
+Table Tasks {
+  id int pk
+  facilityId int
+  taskDescription text
+  taskCategory varchar
+  userId int
+  status varchar
+  priority varchar
+  dateOpened datetime
+  dueDate datetime
+  dateClosed datetime
+  notes text
+  attachmentsFile varchar
+}
+
+
+Table Users {
+  id int pk
+  name varchar
+  email varchar
+  role varchar
+  userImage varchar
+  password varchar
+  cityId int
+}
+
+Table AssignedTasktoUsers {
+  id int pk
+  userId int
+  taskId int
+}
+
+
+Ref: Cities.id < Facilities.cityId
+Ref:  Facilities.id < Tasks.facilityId 
+Ref: Tasks.userId > Users.id
+REf: Cities.id < Users.cityId 
+Ref: Users.id < AssignedTasktoUsers.userId
+Ref: AssignedTasktoUsers.taskId > Tasks.id

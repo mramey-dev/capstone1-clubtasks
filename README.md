@@ -1,5 +1,11 @@
 # React + Vite
 
+WIREFRAME:
+https://www.figma.com/design/FP5QKaf8LEaPfQWebYR6S1/ClubTasks?node-id=0-1&p=f&t=ojVHSJr4aiQ4a9zU-0
+
+ERD:
+https://dbdiagram.io/d/Capstone-1-Proposal-Micah-Ramey-6a4d9d084ac62e474c513786
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
