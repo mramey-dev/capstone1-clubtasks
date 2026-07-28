@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { getAllTasks } from "./components/services/tasksService";
 import { TaskRow } from "./components/TaskRow.jsx";
+import { TaskDetails } from "./components/TaskDetails.jsx";
 
 export const TaskList = () => {
   const [allTasks, setAllTasks] = useState([]);
-
+  const [selectedTask, setSelectedTask] = useState(null);
+  console.log(selectedTask);
   useEffect(() => {
     getAllTasks().then((tasksArray) => {
       setAllTasks(tasksArray);
@@ -17,9 +19,21 @@ export const TaskList = () => {
 
       <div className="tasks">
         {allTasks.map((task) => {
-          return <TaskRow key={task.id} task={task} />;
+          return (
+            <TaskRow
+              key={task.id}
+              task={task}
+              onTaskSelected={setSelectedTask}
+            />
+          );
         })}
       </div>
+
+      {selectedTask ? (
+        <TaskDetails task={selectedTask} />
+      ) : (
+        <p>Select a task to view its details.</p>
+      )}
     </div>
   );
 };

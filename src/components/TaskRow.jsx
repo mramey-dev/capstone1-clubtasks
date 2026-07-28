@@ -1,6 +1,6 @@
-export const TaskRow = ({ task }) => {
+export const TaskRow = ({ task, onTaskSelected }) => {
   return (
-    <article className="task">
+    <article className="task" onClick={() => onTaskSelected(task)}>
       <div>
         <strong>{task.description}</strong>
       </div>
