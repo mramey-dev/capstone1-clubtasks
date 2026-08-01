@@ -1,0 +1,158 @@
+.club-task-form {
+  width: min(760px, calc(100% - 3rem));
+  margin: 3rem auto;
+  padding: 4.5rem 4rem 3rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 28px;
+  background: #f1f1f1;
+  color: #1f1f1f;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* Prevents a second panel when editing inside Task Details */
+.task-details-panel .club-task-form {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.club-task-form h2 {
+  width: min(620px, 100%);
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.task-form-fields {
+  width: min(620px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 0.55rem 1rem;
+  align-items: start;
+}
+
+.task-form-fields label {
+  padding-top: 0.45rem;
+  color: #252525;
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.task-form-fields input,
+.task-form-fields select,
+.task-form-fields textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0.45rem 0.75rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 7px;
+  background: #d8d8d8;
+  color: #252525;
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.task-form-fields input:focus,
+.task-form-fields select:focus,
+.task-form-fields textarea:focus {
+  outline: 2px solid #28139b;
+  outline-offset: 1px;
+}
+
+.task-form-fields textarea {
+  min-height: 90px;
+  padding: 0.65rem 0.9rem;
+  line-height: 1.4;
+  resize: vertical;
+}
+
+.task-form-actions {
+  width: min(620px, 100%);
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.task-form-actions button {
+  min-width: 110px;
+  height: 42px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.task-form-actions button[type="button"] {
+  background: #777777;
+  color: #ffffff;
+}
+
+.task-form-actions button[type="button"]:hover {
+  background: #666666;
+}
+
+.task-form-actions button[type="submit"] {
+  background: #28139b;
+  color: #ffffff;
+}
+
+.task-form-actions button[type="submit"]:hover {
+  background: #1f0e7e;
+}
+
+@media (max-width: 700px) {
+  .club-task-form {
+    width: calc(100% - 2rem);
+    margin: 1.5rem auto;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .task-details-panel .club-task-form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .task-form-fields {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .task-form-fields label {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .task-form-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
